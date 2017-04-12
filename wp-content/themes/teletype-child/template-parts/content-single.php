@@ -27,7 +27,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php teletype_posted_on(); ?>
-		<?php teletype_entry_footer(); ?>
+                <!-- delete author and date time info  -->
+		<?php //teletype_posted_on(); ?>
+		<?php //teletype_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
