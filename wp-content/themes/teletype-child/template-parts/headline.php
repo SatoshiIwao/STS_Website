@@ -28,7 +28,7 @@
 	if( is_singular( 'post' ) && !is_active_sidebar( 'sidebar-post' ) || !is_front_page() && is_singular( 'page' ) && !is_active_sidebar( 'sidebar-page' ) ) : ?>
 
 	<!-- Headline Section -->
-	<section id="headline" class="text-center" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline" class="text-center" <?php //if( !empty( $bgimage ) ) { ?>style="background: url(<?php //echo esc_url( $bgimage ); ?>);"<?//php } ?>>
          		<div class="head-content">
             			<?php the_title( '<h1>', '</h1>' ); ?>
             				<hr>
