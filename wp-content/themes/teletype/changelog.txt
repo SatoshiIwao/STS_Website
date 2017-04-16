@@ -1,5 +1,12 @@
 == Teletype ==
 
+= 1.1.7 - 12.04.2017
+* Remove not used file
+* Changed headline layout
+* Added background image for header function
+* Added option for overlay opacity
+* Other minor fixes (php, css)
+
 = 1.1.6 - 31.03.2017
 * Changed the function of the Google font inclusion (thank you @catchthemes)
 

@@ -97,7 +97,7 @@ function teletype_customizer_library_options() {
 
 	$sections[] = array(
 		'id' => $section,
-		'title' => esc_html__( 'Home & Blog Headline', 'teletype' ),
+		'title' => esc_html__( 'Headline Area', 'teletype' ),
 		'description' => esc_html__( 'You can use the wrap tag (e.g. <h1>Ttile</h1><p>Description</p>) or insert shortcode.', 'teletype' ),
 		'priority' => '60'
 	);
@@ -129,6 +129,19 @@ function teletype_customizer_library_options() {
 	        'step'  => 3,
 	        'style' => 'color: #0a0',
 		)
+	);
+
+	$options['headline-overlay'] = array(
+		'id' => 'headline-overlay',
+		'label'   => esc_html__( 'Headline Overlay', 'teletype' ),
+		'section' => $section,
+		'type'    => 'range',
+		'input_attrs' => array(
+	        			'min'   => 0,
+	        			'max'   => 9,
+	        			'step'  => 1,
+	        			'style' => 'color: #0a0',
+				)
 	);
 
 	// Colors

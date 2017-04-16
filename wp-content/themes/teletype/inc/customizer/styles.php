@@ -287,6 +287,24 @@ function teletype_customizer_build_styles() {
 
 	}
 
+	// Headline Overlay
+	$setting = 'headline-overlay';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$color = customizer_library_sanitize_range( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.overlay-white',
+			),
+			'declarations' => array(
+				'background-color' => 'rgba(255,255,255,.' . $color . ')'
+			)
+		) );
+	}
+
 }
 endif;
 

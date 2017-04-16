@@ -4,7 +4,7 @@ Theme URI: http://dinevthemes.com/themes/teletype/
 Author: DinevThemes
 Author URI: http://dinevthemes.com/
 Description: Teletype is a minimalist theme with masonry posts layout, lots customize options, and drag & drop order sections of the front page. Designed for bloggers and creative folk.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: teletype
@@ -149,6 +149,17 @@ ol {
 :focus { outline: 0; }
 input:focus,
 textarea:focus { outline: 1px solid #ccc; }
+
+.overlay-white {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,.3);
+    z-index: 0;
+}
 
 /*--------------------------------------------------------------
 # Navigation
@@ -753,6 +764,17 @@ label {
 .head-content {
     position: relative;
     padding: 19% 0 15%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.space {
+    height: 100px;
+}
+
+.space .overlay-white,
+.space .head-content {
+    display: none;
 }
 
 #home-widgets {

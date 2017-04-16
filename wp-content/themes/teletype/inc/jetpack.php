@@ -7,6 +7,11 @@
  * @package Teletype
  */
 
+// Jetpack sharing tweak
+if ( function_exists( 'sharing_display' ) ) {
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
+
 /**
  * Jetpack setup function.
  *

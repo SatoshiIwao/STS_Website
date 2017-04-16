@@ -1,4 +1,25 @@
+# ignore all log file
 *.log
+
+# ignore swp files 
 *.swp
+
+# ignore password file for apache
 .htpasswd
-google17f688685c611a7b.html 
+
+# ignore google analytics
+google17f688685c611a7b.html
+
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore 
+
+# ignore all files that start with ~
+~*
+

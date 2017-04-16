@@ -7,6 +7,30 @@
  * @package Teletype
  */
 
+/**
+ * Get Header Background Image
+ */
+if ( ! function_exists( 'teletype_header_bg' ) ) :
+	function teletype_header_bg() {
+		global $post;
+		// Set header Image
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'teletype-header' );
+
+		if( !is_singular() ) {
+			$bgimage = get_header_image();
+		}
+		if( is_singular() && $thumbnail ) {
+			$bgimage = $thumbnail[0];
+		}
+		if( is_singular() && !$thumbnail ) {
+			$bgimage = get_header_image();
+		}
+	if( !empty( $bgimage ) ) {
+		echo ' style="background: url(' . esc_url( $bgimage ) . ');"';
+	}
+	}
+endif;
+
 if ( ! function_exists( 'teletype_main_menu' ) ) :
 /**
  * Return wp_nav_menu

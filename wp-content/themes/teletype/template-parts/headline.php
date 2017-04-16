@@ -7,9 +7,6 @@
 ?>
 
 <?php
-	// Jetpack tweak
-	if ( function_exists( 'sharing_display' ) ) remove_filter( 'the_excerpt', 'sharing_display', 19 );
-
 	// Set header Image
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'teletype-header' );
 
@@ -22,13 +19,18 @@
 	if( is_singular() && !$thumbnail ) {
 		$bgimage = get_header_image();
 	}
+	if( is_page_template( 'templates/landing-page.php' ) ) {
+		$bgimage = $thumbnail[0];
+	}
+	if ( ! get_theme_mod( 'blog-headline-content' ) && empty( $bgimage ) || ! get_theme_mod( 'headline-text' ) && empty( $bgimage ) ) {
+		$class = ' space';
+	}
+
+	if( is_singular( 'post' ) && !is_active_sidebar( 'sidebar-post' ) || !is_front_page() && is_singular( 'page' ) && !is_active_sidebar( 'sidebar-page' ) ) :
 ?>
 
-<?php
-	if( is_singular( 'post' ) && !is_active_sidebar( 'sidebar-post' ) || !is_front_page() && is_singular( 'page' ) && !is_active_sidebar( 'sidebar-page' ) ) : ?>
-
 	<!-- Headline Section -->
-	<section id="headline" class="text-center" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline" class="text-center"<?php teletype_header_bg(); ?>>
          		<div class="head-content">
             			<?php the_title( '<h1>', '</h1>' ); ?>
             				<hr>
@@ -36,16 +38,15 @@
 				<?php the_excerpt(); ?>
 			<?php endif; ?>
          		</div>
+		<span class="overlay-white"></span>
       	</section>
 <?php
-	endif; ?>
+	endif;
 
-
-<?php
 	if( is_singular( 'post' ) && is_active_sidebar( 'sidebar-post' ) || !is_front_page() && is_singular( 'page' ) && is_active_sidebar( 'sidebar-page' ) ) : ?>
 
 	<!-- Headline Section -->
-	<section id="headline" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline"<?php teletype_header_bg(); ?>>
 
 		<div class="container caption-wrapper">
 			<?php if ( has_excerpt() ) : ?>
@@ -55,43 +56,44 @@
 				<?php the_title( '<h1>', '</h1>' ); ?>
 			</div>
          		</div>
+		<span class="overlay-white"></span>
       	</section>
 <?php
-	endif; ?>
-
-<?php
+	endif;
+	// Front Display
 	if( is_front_page() || is_home() && is_front_page() ) : ?>
 
 	<!-- Headline Section -->
-	<section id="headline" class="text-center" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline" class="text-center<?php if( !empty( $class ) ) { echo esc_html( $class ); } ?>"<?php teletype_header_bg(); ?>>
          		<div class="head-content">
 			<?php echo do_shortcode( wp_kses_post( get_theme_mod( 'headline-text' ) ) ); ?>
          		</div>
+		<span class="overlay-white"></span>
       	</section>
 <?php
-	endif; ?>
-
-<?php
+	endif;
+	// Blog Page
 	if( !is_front_page() && is_home() ) : ?>
 
 	<!-- Headline Section -->
-	<section id="headline" class="text-center" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline" class="text-center<?php if( !empty( $class ) ) { echo esc_html( $class ); } ?>"<?php teletype_header_bg(); ?>>
          		<div class="head-content">
 			<?php echo do_shortcode( wp_kses_post( get_theme_mod( 'blog-headline-content' ) ) ); ?>
          		</div>
+		<span class="overlay-white"></span>
       	</section>
 <?php
-	endif; ?>
+	endif;
 
-<?php
 	if( is_404() ) : ?>
 
-	<section id="headline" class="text-center" <?php if( !empty( $bgimage ) ) { ?>style="background: url(<?php echo esc_url( $bgimage ); ?>);"<?php } ?>>
+	<section id="headline" class="text-center"<?php teletype_header_bg(); ?>>
          		<div class="head-content">
             			<h1><?php esc_html_e( 'Error 404', 'teletype' ); ?></h1>
             				<hr>
             			<p class="lead"><?php esc_html_e( 'Oops! That page cant be found.', 'teletype' ); ?></p>
          		</div>
+		<span class="overlay-white"></span>
       	</section>
 <?php
 	endif; ?>
