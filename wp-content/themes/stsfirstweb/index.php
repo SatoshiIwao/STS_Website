@@ -8,27 +8,70 @@
 <?php wp_head(); ?>
 </head>
 <body>
+<nav class="navbar navbar-light bg-faded">
+  <h1 class="navbar-brand mb-0">Navbar</h1>
+</nav>
+<nav class="navbar fixed-top navbar-inverse bg-primary">
+  <a class="navbar-brand" href="#">Fixed top</a>
+</nav>
+
+
   <div id="page" class="site">
-      <!-- Header  -->
+    <!-- Header  -->
     <header id="masthead" class="site-header" role="banner">
-      <i class="fa fa-android fa-5x"></i>
-      <i class="fa fa-hand-o-right fa-5x fa-spin" aria-hidden="true"></i>
-      <button type="button" class="btn btn-info">Default</button>
-      <div id="headerimg">
-	<h1>
-	      <a href="<?php echo get_option('home'); ?>">
+      <!-- Navigation -->
+      <nav id="main-menu" class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	  <div class='navibar-header'>
+	    <h1>
+	    <a href="<?php echo get_option('home'); ?>">
 	      <?php bloginfo('name'); ?></a>
-	  </h1>
-	  <div class="description">
+	    </h1>
+	    <span class="description">
 	      <?php bloginfo('description'); ?>
+	    </span><!-- #description -->
+	  </div><!-- #navibar-header -->
+	  <div>
 	  </div>
-      </div>
+	</div> <!-- #container -->
+      </nav><!-- end Navigation -->
+ 
     </header>
     <!-- end Header -->
     <!-- Main content -->
     <div id="content" class="site-content">
       <div id="primary" class="content-area container">
 	  <main id="main" class="site-main" role="main">
+          <h1>test</h1>
+          <h1>test</h1>	          
+          <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>	          
+          <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>
+          <h1>test</h1>	          
+          <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>	          
+          <h1>test</h1>
+	  <h1>test</h1>
+          <h1>test</h1>
+	  <h1>test</h1>
+	  <h1>test</h1>
+
+
 
 	  </main><!-- #main -->
       </div><!-- #primary -->
