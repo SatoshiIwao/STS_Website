@@ -44,39 +44,48 @@
     <div id="content" class="site-content">
       <div id="primary" class="content-area container">
 	  <main id="main" class="site-main" role="main">
-          <h1>test</h1>
-          <h1>test</h1>	          
-          <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>	          
-          <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>
-          <h1>test</h1>	          
-          <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>	          
-          <h1>test</h1>
-	  <h1>test</h1>
-          <h1>test</h1>
-	  <h1>test</h1>
-	  <h1>test</h1>
 
+            <!-- Blog Section -->
+            <section id="blog" class="text-left">
 
+              <?php if ( have_posts() ) : ?>
 
-	  </main><!-- #main -->
-      </div><!-- #primary -->
+                <div id="blog-masonry" class="row">
+
+		  <?php while ( have_posts() ) : the_post(); //get_template_part( 'template-parts/content', get_post_format() );?>
+
+		    <div class="col-md-4 col-sm-6 post-box">
+		       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			 <?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+
+			 <?php get_template_part( 'template-parts/post', 'meta-cat' ); ?>
+
+			 <div class="entry-summary">
+			   <?php the_excerpt(); ?>
+			 </div><!-- .entry-excerpt -->
+
+			 <div class="footer-meta">
+			   <a href="<?php the_permalink(); ?>" class="read-more">
+			     <?php esc_html_e( 'Read more', 'teletype' ); ?>
+			   </a>
+			 </div>
+
+		       </article>
+		    </div>
+
+		  <?php endwhile; ?>
+
+                </div><!-- .blog-masonry -->
+                <?php //teletype_pagination();
+              else :
+                get_template_part( 'template-parts/content', 'none' );
+              endif; // have_posts() ?>
+
+            </section><!-- #blog -->
+
+          </main><!-- #main -->
+       </div><!-- #primary -->
     </div><!-- #content -->
     <!-- end Main content -->
 
