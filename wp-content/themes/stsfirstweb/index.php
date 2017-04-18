@@ -8,32 +8,34 @@
 <?php wp_head(); ?>
 </head>
 <body>
-<nav class="navbar navbar-light bg-faded">
-  <h1 class="navbar-brand mb-0">Navbar</h1>
-</nav>
-<nav class="navbar fixed-top navbar-inverse bg-primary">
-  <a class="navbar-brand" href="#">Fixed top</a>
-</nav>
-
-
   <div id="page" class="site">
     <!-- Header  -->
     <header id="masthead" class="site-header" role="banner">
       <!-- Navigation -->
-      <nav id="main-menu" class="navbar navbar-default navbar-fixed-top">
+      <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
 	<div class="container-fluid">
+          
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	    <span class="sr-only">Toggle navigation</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+
 	  <div class='navibar-header'>
-	    <h1>
-	    <a href="<?php echo get_option('home'); ?>">
+
+	    <a class='navbar-brand' href="<?php echo get_option('home'); ?>">
 	      <?php bloginfo('name'); ?></a>
-	    </h1>
-	    <span class="description">
-	      <?php bloginfo('description'); ?>
-	    </span><!-- #description -->
-	  </div><!-- #navibar-header -->
-	  <div>
-	  </div>
-	</div> <!-- #container -->
+<!--	    <span class="description">
+	      <?php //bloginfo('description'); ?>
+	    </span>--><!-- #description -->
+	  </div><!-- #navibar-header -->	  
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <?php wp_nav_menu(array("container"=>"false" ,"menu_class" => "nav navbar-nav navbar-right")); ?>
+          </div> 
+	</div> <!-- #container-fluid -->
       </nav><!-- end Navigation -->
  
     </header>

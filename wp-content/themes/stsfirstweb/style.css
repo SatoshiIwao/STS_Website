@@ -6,9 +6,53 @@ Version: 0.0.1
 Tags: bootstrap
 */
 
-/**
-* Test 
-*/
+/*------------------------
+= Table Contents
+--------------------------
+Document Base
+Navigation
+- Social Media Icons
+Pagination
+Typography
+Footer
+Forms
+Accessibility
+Alignments
+Clearings
+Content
+- Sections
+-- Headline and Service
+-- Gallery
+-- Blog Posts
+-- Testiomonials
+- Posts and pages
+- Comments
+Media
+- Captions
+- Galleries
+Elements
+Infinite scroll
+Responsive
+-------------------------*/
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
 
 
-
+body {
+    line-height: 1;
+    font: 14px/24px Courier, "Courier New", monospace;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+#main-menu {
+    background-color: transparent;
+    border: none;
+    top: inherit;
+    margin: 0;
+}

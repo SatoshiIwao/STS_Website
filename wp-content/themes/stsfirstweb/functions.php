@@ -24,7 +24,7 @@ function sts_scripts() {
         wp_enqueue_style( 'stsfirstweb-style', get_stylesheet_uri() );
 
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-
+        wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array(), '1.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'sts_scripts' );
 
