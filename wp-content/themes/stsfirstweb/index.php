@@ -42,56 +42,26 @@
     <!-- end Header -->
     <!-- Main content -->
     <div id="content" class="site-content">
+     <!-- primary -->
       <div id="primary" class="content-area container">
-	  <main id="main" class="site-main" role="main">
-
-            <!-- Blog Section -->
-            <section id="blog" class="text-left">
-
-              <?php if ( have_posts() ) : ?>
-
-                <div id="blog-masonry" class="row">
-
-		  <?php while ( have_posts() ) : the_post(); //get_template_part( 'template-parts/content', get_post_format() );?>
-
-		    <div class="col-md-4 col-sm-6 post-box">
-		       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			 <?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-
-			 <?php get_template_part( 'template-parts/post', 'meta-cat' ); ?>
-
-			 <div class="entry-summary">
-			   <?php the_excerpt(); ?>
-			 </div><!-- .entry-excerpt -->
-
-			 <div class="footer-meta">
-			   <a href="<?php the_permalink(); ?>" class="read-more">
-			     <?php esc_html_e( 'Read more', 'teletype' ); ?>
-			   </a>
-			 </div>
-
-		       </article>
-		    </div>
-
-		  <?php endwhile; ?>
-
-                </div><!-- .blog-masonry -->
-                <?php //teletype_pagination();
-              else :
-                get_template_part( 'template-parts/content', 'none' );
-              endif; // have_posts() ?>
-
-            </section><!-- #blog -->
-
+        <!-- page -->
+        <div id="page" class="row">
+          <!-- main -->
+          <main id="main" class="site-main col-md-8" role="main">
+             <p>main content here!</p>
           </main><!-- #main -->
-       </div><!-- #primary -->
+          <aside id="secondary" class="widget-area col-md-4" role="complementary">
+             <p>here is sidebar</p>
+          </aside><!-- #secondary -->
+        </div><!-- #page -->
+      </div><!-- #primary -->
     </div><!-- #content -->
     <!-- end Main content -->
 
     <!-- Footer -->
     <footer id="footer">
       <div class="container">
+      <p>here is footer</p>
       </div><!-- .container -->
     </footer>
   </div><!-- #page -->
