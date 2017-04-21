@@ -78,7 +78,7 @@ body {
 /* override default .carousel-inner>.item>img to get image full width */
 .carousel-inner>.item>img {
     width: 100%;
-    height: 500px; /* is there any way to inherit from grand parent?? 
+    height: 500px; /* is there any way to inherit from grand parent?? */
 } 
 
 
