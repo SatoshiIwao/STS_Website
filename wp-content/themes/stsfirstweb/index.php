@@ -8,12 +8,13 @@
 <?php wp_head(); ?>
 </head>
 <body>
+  <!-- #page -->
   <div id="page" class="site">
     <!-- Header  -->
     <header id="masthead" class="site-header" role="banner">
       <!-- Navigation -->
       <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-
+        <!-- container-fluid  -->
 	<div class="container-fluid">
           
 	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -33,7 +34,10 @@
 	  </div><!-- #navibar-header -->	  
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <?php wp_nav_menu(array("container"=>"false" ,"menu_class" => "nav navbar-nav navbar-right")); ?>
+            <?php wp_nav_menu(array(
+                "container"=>"false" 
+               ,"menu_class" => "nav navbar-nav navbar-right"
+            )); ?>
           </div> 
 	</div> <!-- #container-fluid -->
       </nav><!-- end Navigation -->
@@ -42,8 +46,56 @@
     <!-- end Header -->
     <!-- Main content -->
     <div id="content" class="site-content">
+      <!-- image-slider-container -->   
+      <div id="image-slider-container">
+         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+           <!-- Indicators -->
+           <ol class="carousel-indicators">
+             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+           </ol><!-- Indicators -->
+           <!-- Wrapper for slides -->
+           <div class="carousel-inner">
+             <!-- Item -->
+             <div class="item active">
+               <img src="<?php echo wp_upload_dir()[ 'baseurl' ];?>/2017/04/sample1.jpg" alt="...">
+               <div class="carousel-caption">
+      	         <h3>Caption Text</h3>
+               </div><!-- Item -->
+             </div>
+              <!-- Item -->
+             <div class="item">
+               <img src="<?php echo wp_upload_dir()[ 'baseurl' ];?>/2017/04/sample2.jpg" alt="...">
+               <div class="carousel-caption">
+      	         <h3>Caption Text</h3>
+               </div>
+             </div> <!-- Item -->
+
+              <!-- Item -->
+             <div class="item">
+               <img src="<?php echo wp_upload_dir()[ 'baseurl' ];?>/2017/04/sample3.jpg" alt="...">
+               <div class="carousel-caption">
+      	         <h3>Caption Text</h3>
+               </div>
+             </div> <!-- Item -->
+
+           </div> <!-- Wrapper for slides --> 
+
+           <!-- Controls -->
+           <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+             <i class="fa fa-chevron-left" aria-hidden="true"></i>
+           </a>
+           <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+             <i class="fa fa-chevron-right" aria-hidden="true"></i>
+           </a><!-- Controls -->
+        </div> <!-- Carousel -->
+      </div><!-- image-slider-container -->
+
+
+
      <!-- primary -->
-      <div id="primary" class="content-area container">
+      <div id="primary" class="content-area container"> 
         <!-- page -->
         <div id="page" class="row">
           <!-- main -->
@@ -66,6 +118,9 @@
     </footer>
   </div><!-- #page -->
   <?php wp_footer(); ?>
+  <script type="text/javascript">
+  </script>
+
 </body>
 </html>
 

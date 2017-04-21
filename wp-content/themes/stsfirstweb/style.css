@@ -56,3 +56,29 @@ body {
     top: inherit;
     margin: 0;
 }
+
+/*--------------------------------------------------------------
+# Image Slider (bootstrap) modification
+--------------------------------------------------------------*/
+#image-slider-container {
+    width: 100%;
+}
+/* override default fa fa-chevron-left */
+.fa {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+/* override bootstrap carousel-inner to adjust image height*/
+.carousel-inner {
+    height: 500px;
+}
+
+/* override default .carousel-inner>.item>img to get image full width */
+.carousel-inner>.item>img {
+    width: 100%;
+    height: 500px; /* is there any way to inherit from grand parent?? 
+} 
+
+
