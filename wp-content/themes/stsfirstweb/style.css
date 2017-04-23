@@ -80,5 +80,8 @@ body {
     width: 100%;
     height: 500px; /* is there any way to inherit from grand parent?? */
 } 
-
-
+/* adjustment for title logo   */
+.navbar-brand>img {
+    display: inline;
+    max-height: 50px;
+}

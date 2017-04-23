@@ -14,6 +14,31 @@ if ( version_compare( $GLOBALS['wp_version'], '4.2', '<' ) ) {
         require get_template_directory() . '/inc/back-compat.php';
 }
 
+if ( ! function_exists( 'stsfirstweb_setup' ) ) :
+
+function stsfirstweb_setup() {
+
+        $defaults = array(
+	    'default-color'          => '',
+	    'default-image'          => '',
+	    'default-repeat'         => '',
+	    'default-position-x'     => '',
+	    'default-attachment'     => '',
+	    'wp-head-callback'       => '_custom_background_cb',
+	    'admin-head-callback'    => '',
+	    'admin-preview-callback' => ''
+        );
+        add_theme_support( 'custom-background', $defaults );
+        add_theme_support( 'custom-logo' , array( 
+            'height'      => 150,
+	    'width'       => 150,
+        ));
+
+}
+endif;
+add_action( 'after_setup_theme', 'stsfirstweb_setup' );
+
+
 /**
  * Enqueue scripts and styles.
  */

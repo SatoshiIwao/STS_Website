@@ -7,6 +7,15 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 </head>
+
+<?php
+if ( function_exists( 'the_custom_logo' ) ) {
+        $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+        $logo = esc_url( $image[0] );
+} else {
+        $logo = esc_url( get_theme_mod( 'logo' ) );
+}
+?>
 <body>
   <!-- #page -->
   <div id="page" class="site">
@@ -27,6 +36,12 @@
 	  <div class='navibar-header'>
 
 	    <a class='navbar-brand' href="<?php echo get_option('home'); ?>">
+
+              <?php if ( ! empty( $logo ) ) { ?>
+                <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="alignleft" />
+              <?php } ?>
+
+
 	      <?php bloginfo('name'); ?></a>
 <!--	    <span class="description">
 	      <?php //bloginfo('description'); ?>
