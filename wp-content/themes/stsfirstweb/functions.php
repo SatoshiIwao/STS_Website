@@ -29,11 +29,27 @@ function stsfirstweb_setup() {
 	    'admin-preview-callback' => ''
         );
         add_theme_support( 'custom-background', $defaults );
-        add_theme_support( 'custom-logo' , array( 
-            'height'      => 150,
-	    'width'       => 150,
-        ));
+        add_theme_support( 'custom-logo' , array( ));
+/*
+        $args = array(
+	    'flex-width'    => true,
+	    'width'         => 980,
+	    'flex-height'    => true,
+	    'height'        => 200,
+	    'default-image' => get_template_directory_uri() . '/images/header.jpg',
+            'uploads'       => true,
+        );
+        add_theme_support( 'custom-header', $args );
 
+        register_default_headers( array(
+                'default-image' => array(
+                'url'           => '%s/assets/images/header.jpg',
+                'thumbnail_url' => '%s/assets/images/header.jpg',
+                'description'   => __( 'Default Header Image', 'twentyseventeen' ),
+            ),
+        ) );
+*/
+ 
 }
 endif;
 add_action( 'after_setup_theme', 'stsfirstweb_setup' );

@@ -33,8 +33,8 @@ function twentyseventeen_custom_header_setup() {
 	 *     @type string $flex-height     		Flex support for height of header.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'twentyseventeen_custom_header_args', array(
-		'default-image'      => get_parent_theme_file_uri('/assets/images/header.jpg'),
+	add_theme_support( 'custom-header', apply_filters( 'stsfirstweb_custom_header_args', array(
+		'default-image'      => wp_upload_dir()."/2017/04/sample1.png",
 		'width'              => 2000,
 		'height'             => 1200,
 		'flex-height'        => true,
@@ -44,9 +44,9 @@ function twentyseventeen_custom_header_setup() {
 
 	register_default_headers( array(
 		'default-image' => array(
-			'url'           => '%s/assets/images/header.jpg',
-			'thumbnail_url' => '%s/assets/images/header.jpg',
-			'description'   => __( 'Default Header Image', 'twentyseventeen' ),
+			'url'           => wp_upload_dir()."/2017/04/sample1.png",
+			'thumbnail_url' => wp_upload_dir()."/2017/04/sample1.png",
+			'description'   => __( 'Default Header Image', 'stsfirstweb' ),
 		),
 	) );
 }

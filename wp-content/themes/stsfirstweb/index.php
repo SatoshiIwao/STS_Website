@@ -16,6 +16,7 @@ if ( function_exists( 'the_custom_logo' ) ) {
         $logo = esc_url( get_theme_mod( 'logo' ) );
 }
 ?>
+
 <body>
   <!-- #page -->
   <div id="page" class="site">
@@ -106,8 +107,6 @@ if ( function_exists( 'the_custom_logo' ) ) {
            </a><!-- Controls -->
         </div> <!-- Carousel -->
       </div><!-- image-slider-container -->
-
-
 
      <!-- primary -->
       <div id="primary" class="content-area container"> 

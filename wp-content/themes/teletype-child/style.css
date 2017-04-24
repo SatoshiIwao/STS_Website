@@ -51,3 +51,10 @@ p {
 #footer {
     padding: 10px 0 10px 0;
 }
+
+.profile-image {
+    margin-bottom: 30px;
+    border-width: thin;
+    border-style: double;
+}
+
