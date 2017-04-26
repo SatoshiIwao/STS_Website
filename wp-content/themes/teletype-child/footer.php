@@ -42,8 +42,8 @@ if ( has_nav_menu( 'social' ) ) {
 }
 ?>
 
-<p class="credit"><?php echo '&copy; '.date('Y'); ?>&nbsp;&middot;&nbsp;<?php echo esc_html( get_theme_mod( 'copyright_txt' ) ); ?></p>
-<p class="credit"><?php do_action( 'teletype_credits' ); ?></p>
+<p class="credit"><?php //echo '&copy; '.date('Y'); ?><!--&nbsp;&middot;&nbsp;--><?php //echo esc_html( get_theme_mod( 'copyright_txt' ) ); ?></p>
+<p class="credit"><?php //do_action( 'teletype_credits' ); ?></p>
 
 	</div><!-- .container -->
 </footer>
